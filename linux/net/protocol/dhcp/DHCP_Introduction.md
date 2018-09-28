@@ -21,5 +21,14 @@ Server's IP address.
 is the same as itself, DHCP Server will send one <font color=red>DHCP ACK packet</font> to DHCP Client.
 
 ## DHCP Packet analyse
-
+- DHCP Discover
 ![](pic/dhcp_discover.png)
+
+- DHCP Offer
+![](pic/dhcp_offer.png)
+
+-DHCP Request
+![](pic/dhcp_request.png)
+
+-DHCP ACK
+![](pic/dhcp_ack.png)

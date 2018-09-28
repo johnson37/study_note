@@ -34,3 +34,29 @@ static int ip_route_output_slow(struct rtable **rp, const struct flowi *oldflp)
 
 ### The whole process flow
 ![](pic/loopback_flow.png)
+
+### Init loopback device
+
+```
+net_dev_init
+
+-->register_pernet_device(&loopback_net_ops)
+
+-->struct pernet_operations __net_initdata loopback_net_ops = {
+
+    .init = loopback_net_init
+
+-->alloc_netdev(0, "lo", loopback_setup)
+
+    --> dev->netdev_ops     = &loopback_ops
+
+        --> .ndo_start_xmit= loopback_xmit
+
+            -->skb->protocol = eth_type_trans(skb, dev)
+
+            -->netif_rx
+
+                -->netif_receive_skb
+
+-->register_netdev(dev) 
+```

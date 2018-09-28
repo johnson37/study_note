@@ -22,11 +22,4 @@ is the same as itself, DHCP Server will send one <font color=red>DHCP ACK packet
 
 ## DHCP Packet analyse
 
-- Discover
 ![](pic/dhcp_discover.png)
-- DCHP Offer
-![](pic/dhcp_offer.png)
-- DHCP Request
-![](pic/dhcp_request.png)
-- DHCP ACK
-![](pic/dhcp_ack.png)

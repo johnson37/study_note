@@ -19,3 +19,14 @@ the first DHCP Offer it received.
 Server's IP address.
 - When DHCP Server receive one DHCP Request, will check option segment's IP Address. If this IP address
 is the same as itself, DHCP Server will send one <font color=red>DHCP ACK packet</font> to DHCP Client.
+
+## DHCP Packet analyse
+
+- Discover
+![](pic/dhcp_discover.png)
+- DCHP Offer
+![](pic/dhcp_offer.png)
+- DHCP Request
+![](pic/dhcp_request.png)
+- DHCP ACK
+![](pic/dhcp_ack.png)

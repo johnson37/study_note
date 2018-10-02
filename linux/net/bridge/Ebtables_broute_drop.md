@@ -1,7 +1,7 @@
 # Ebtables broute表和其他表对于DROP的处理区别
 ## Ebtables broute 的部分实现
 **netif_receive_skb_core**
-```
+```c
 netif_receive_skb_core
 {
 	rx_handler = rcu_dereference(skb->dev->rx_handler);
@@ -27,7 +27,7 @@ netif_receive_skb_core
 }
 ```
 **br_handle_frame**
-```
+```c
 br_handle_frame
 {
 ...

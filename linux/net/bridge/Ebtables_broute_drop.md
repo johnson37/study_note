@@ -44,7 +44,7 @@ br_handle_frame
 }
 ```
 **ebt_broute**
-```
+```c
 static int ebt_broute(struct sk_buff *skb)
 {
 	struct nf_hook_state state;
@@ -62,7 +62,7 @@ static int ebt_broute(struct sk_buff *skb)
 ```
 ## Ebtables  其他表的行为 (以NAT表的PREROUTING链为例)
 **netif_receive_skb_core**
-```
+```c
 	rx_handler = rcu_dereference(skb->dev->rx_handler);
 	if (rx_handler) {
 		if (pt_prev) {
@@ -85,7 +85,7 @@ static int ebt_broute(struct sk_buff *skb)
 	}
 ```
 **br_handle_frame**
-```
+```c
 	case BR_STATE_LEARNING:
 		if (ether_addr_equal(p->br->dev->dev_addr, dest))
 			skb->pkt_type = PACKET_HOST;
@@ -96,7 +96,7 @@ static int ebt_broute(struct sk_buff *skb)
 		break;
 ```
 **NF_HOOK**
-```
+```c
 static inline int
 NF_HOOK(uint8_t pf, unsigned int hook, struct net *net, struct sock *sk, struct sk_buff *skb,
 	struct net_device *in, struct net_device *out,
@@ -106,7 +106,7 @@ NF_HOOK(uint8_t pf, unsigned int hook, struct net *net, struct sock *sk, struct 
 }
 ```
 **NF_HOOK_THRESH**
-```
+```c
 static inline int
 NF_HOOK_THRESH(uint8_t pf, unsigned int hook, struct net *net, struct sock *sk,
 	       struct sk_buff *skb, struct net_device *in,
@@ -122,7 +122,7 @@ NF_HOOK_THRESH(uint8_t pf, unsigned int hook, struct net *net, struct sock *sk,
 
 ```
 **nf_hook_thresh**
-```
+```c
 static inline int nf_hook_thresh(u_int8_t pf, unsigned int hook,
 				 struct net *net,
 				 struct sock *sk,
@@ -148,7 +148,7 @@ static inline int nf_hook_thresh(u_int8_t pf, unsigned int hook,
 ## Difference between broute and nat/filter
 When Drop action is triggered in Broute table, the ret value is **RX_HANDLER_PASS**
 When Drop action is triggered in other table, the ret value is **RX_HANDLER_CONSUMED**
-```
+```c
 netif_receive_skb_core
 {
 	if (rx_handler) {

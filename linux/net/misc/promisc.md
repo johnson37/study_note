@@ -11,15 +11,15 @@
 ## 混杂模式的设置
 - **ifconfig eth0 promisc**
 - **ifconfig eth0 -promisc**
-
-- [root@mip-123456 ioctl]# ifconfig eth0
-- eth0 Link encap:Ethernet HWaddr 00:22:68:3C:9C:F0 
--          inet addr:172.24.149.212 Bcast:172.24.149.255 Mask:255.255.255.0
--           inet6 addr: fe80::222:68ff:fe3c:9cf0/64 Scope:Link
--           UP BROADCAST RUNNING <font color=red>**PROMISC**</font> MULTICAST MTU:1500 Metric:1
--           RX packets:3653 errors:0 dropped:0 overruns:0 frame:0
--           TX packets:6630 errors:0 dropped:0 overruns:0 carrier:0
--           collisions:0 txqueuelen:1000 
--           RX bytes:6255432 (5.9 MiB) TX bytes:2379200 (2.2 MiB)
-- 	    Interrupt:233 Base address:0xa000 
-
+```
+[root@mip-123456 ioctl]# ifconfig eth0
+eth0 Link encap:Ethernet HWaddr 00:22:68:3C:9C:F0 
+         inet addr:172.24.149.212 Bcast:172.24.149.255 Mask:255.255.255.0
+          inet6 addr: fe80::222:68ff:fe3c:9cf0/64 Scope:Link
+          UP BROADCAST RUNNING <font color=red>**PROMISC**</font> MULTICAST MTU:1500 Metric:1
+          RX packets:3653 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:6630 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:6255432 (5.9 MiB) TX bytes:2379200 (2.2 MiB)
+	  Interrupt:233 Base address:0xa000 
+```

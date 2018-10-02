@@ -11,6 +11,7 @@
 ## 混杂模式的设置
 - **ifconfig eth0 promisc**
 - **ifconfig eth0 -promisc**
+
 [root@mip-123456 ioctl]# ifconfig eth0
 eth0 Link encap:Ethernet HWaddr 00:22:68:3C:9C:F0 
           inet addr:172.24.149.212 Bcast:172.24.149.255 Mask:255.255.255.0

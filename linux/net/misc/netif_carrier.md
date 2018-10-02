@@ -8,7 +8,7 @@
 ## Code
 
 ### Part 1
-```
+```c
         if (p->p.phy->link)
         {    
             if(!netif_carrier_ok(p->dev))

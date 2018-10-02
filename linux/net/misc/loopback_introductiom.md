@@ -8,7 +8,7 @@ A series netwrok 127 is prepared for loopback interface. Usually, most system wi
 ### Two route table
 There are tow default table. One is for local route, and the other is for main route.
 When Linux starts to route lookup, Linux will loop up local route table and then main route table.
-```
+```c
 static inline int fib_lookup(const struct flowi *flp, struct fib_result *res)
 {
 	if (ip_fib_local_table->tb_lookup(ip_fib_local_table, flp, res) &&
@@ -19,7 +19,7 @@ static inline int fib_lookup(const struct flowi *flp, struct fib_result *res)
 ```
 
 If Linux kernel thinks this target IP as localhost, Kernel will set the output device as loopbakc_dev.
-```
+```c
 static int ip_route_output_slow(struct rtable **rp, const struct flowi *oldflp)
 {
 	if (res.type == RTN_LOCAL) {
@@ -37,7 +37,7 @@ static int ip_route_output_slow(struct rtable **rp, const struct flowi *oldflp)
 
 ### Init loopback device
 
-```
+```c
 net_dev_init
 
 -->register_pernet_device(&loopback_net_ops)

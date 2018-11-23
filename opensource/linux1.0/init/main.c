@@ -347,7 +347,7 @@ static void copro_timeout(void)
 	outb_p(0,0xf1);
 	outb_p(0,0xf0);
 }
-
+//Start_kernel, kernel start
 asmlinkage void start_kernel(void)
 {
 /*
